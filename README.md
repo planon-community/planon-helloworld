@@ -4,7 +4,7 @@
 
     ```shell
     mkdir helloworld
-    cd !-1$:h
+    cd helloworld
     gradle init --type java-library --dsl groovy --test-framework junit --project-name HelloWorld --package edu.dartmouth.bt.planon.helloworld.sx
 
     mkdir lib
