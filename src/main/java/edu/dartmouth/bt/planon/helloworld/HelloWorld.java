@@ -5,23 +5,14 @@ package edu.dartmouth.bt.planon.helloworld;
 
 import nl.planon.hades.userextension.uxinterface.*;
 
-public abstract class HelloWorld implements IUserExtension {
-    private String description = "This User Extension sets the value of a free field on the business object.";
+public class HelloWorld implements IUserExtension {
+    public HelloWorld() {}
 
-    public HelloWorld(String description) {
-        this.description = description;
-    }
-
-    public void executeUX(IUXBusinessObject newBO, IUXBusinessObject oldBO, IUXContext context, String parameters) {
-        String helloworld = "hello!";
-
-        IUXStringField FreeString11 = newBO.getStringFieldByName("FreeString11");
-        
-        FreeString11.setValueAsString(helloworld);
-        newBO.save();
+    public void executeUX(IUXBusinessObject aUXBO,IUXBusinessObject aOldUXBO, IUXContext aUXContext, String aParameter) {
+        // do stuff
     }
     
     public String getDescription() {
-        return this.description;
+        return "This User Extension sets the value of a free field on the business object.";
     }
 }
