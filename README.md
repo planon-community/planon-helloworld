@@ -61,3 +61,19 @@
 
 7. Set your JDK path as needed using the **gradle.properties** file
     1. *EXAMPLE*: **org.gradle.java.home=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/**
+8. Use gradle to build the JAR
+
+    ```shell
+    gradle build
+    ```
+
+    ![Gradle Build](documentation/images/gradle-build.gif)
+
+9. Copy the resulting JAR from **build/libs/** to the **/tms/jboss** folder on the Planon server
+10. You should see **server.log** entries similiar to the following if your package loaded correctly
+
+    ```shell
+    2019-10-15 15:04:34,355 INFO  [pnlog.NONE.com.planonsoftware.platform.ux.v1.adapter.UXAdapter] (fileinstall-/var/lib/openshift/5da0cd38e3c9c3d6bb000b7f/planon/PlanonProCenter/wildfly-10.1.0.Final/standalone/bundles/planon) User Extension bundle Dartmouth-HelloWorld is installing...
+    2019-10-15 15:04:34,358 INFO  [pnlog.NONE.com.planonsoftware.platform.ux.v1.adapter.UXAdapter] (fileinstall-/var/lib/openshift/5da0cd38e3c9c3d6bb000b7f/planon/PlanonProCenter/wildfly-10.1.0.Final/standalone/bundles/planon) User Extension bundle 'Dartmouth-HelloWorld' is installed.
+    2019-10-15 15:04:34,358 INFO  [pnlog.DEFAULT.nl.planon.hades.osgi.platform.OSGIContainer] (fileinstall-/var/lib/openshift/5da0cd38e3c9c3d6bb000b7f/planon/PlanonProCenter/wildfly-10.1.0.Final/standalone/bundles/planon) Bundle: Dartmouth-HelloWorld (0.0.0) is started.
+    ```
