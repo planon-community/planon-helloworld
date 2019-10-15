@@ -12,7 +12,7 @@ public abstract class HelloWorld implements IUserExtension {
         this.description = description;
     }
 
-    public void execute(IUXBusinessObject newBO, IUXBusinessObject oldBO, IUXContext context, String parameters) throws Exception {
+    public void executeUX(IUXBusinessObject newBO, IUXBusinessObject oldBO, IUXContext context, String parameters) {
         String helloworld = "hello!";
 
         IUXStringField FreeString11 = newBO.getStringFieldByName("FreeString11");

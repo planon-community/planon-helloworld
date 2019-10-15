@@ -29,3 +29,17 @@ dependencies {
 
     compile files('lib/com.planonsoftware.ux.api.v1-2.2.1.0-1.jar')
 }
+
+jar {
+    baseName = 'helloworld'
+    version = '0.0.2'
+    manifest {
+        attributes (
+            'Manifest-Version': '1.0',
+            'Bundle-SymbolicName': 'Dartmouth-HelloWorld',
+            'Planon-UserExtension': '1.0.0',
+            'Planon-IUserExtension': 'edu.dartmouth.bt.planon.helloworld.HelloWorld',
+            'Import-Package': 'nl.planon.hades.userextension.uxinterface'
+        )
+    }
+}
