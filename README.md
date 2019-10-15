@@ -69,7 +69,7 @@
 
     ![Gradle Build](documentation/images/gradle-build.gif)
 
-9. Copy the resulting JAR from **build/libs/** to the **/tms/jboss** folder on the Planon server
+9. Copy the resulting JAR from **build/libs/** to the **/tms/upload/jboss** folder on the Planon server
 10. You should see **server.log** entries similiar to the following if your package loaded correctly
 
     ```shell
