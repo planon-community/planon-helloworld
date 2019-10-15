@@ -22,7 +22,7 @@
     1. *EXAMPLE*:
 
         ```java
-        package edu.dartmouth.bt.planon;
+        package edu.dartmouth.bt.planon.helloworld.sx;
 
         import nl.planon.hades.userextension.uxinterface.*;
 
@@ -52,7 +52,7 @@
                 'Manifest-Version': '1.0',
                 'Bundle-SymbolicName': 'Dartmouth-HelloWorld',
                 'Planon-UserExtension': '1.0.0',
-                'Planon-IUserExtension': 'edu.dartmouth.bt.planon.HelloWorld',
+                'Planon-IUserExtension': 'edu.dartmouth.bt.planon.helloworld.sx.HelloWorld',
                 'Import-Package': 'nl.planon.hades.userextension.uxinterface'
             )
         }
