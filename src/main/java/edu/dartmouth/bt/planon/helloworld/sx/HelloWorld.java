@@ -3,18 +3,24 @@
  */
 package edu.dartmouth.bt.planon.helloworld.sx;
 
-import nl.planon.hades.userextension.uxinterface.*;
+import nl.planon.hades.userextension.uxinterface.IUXBusinessObject;
+import nl.planon.hades.userextension.uxinterface.IUXContext;
+import nl.planon.hades.userextension.uxinterface.IUserExtension;
+import nl.planon.util.pnlogging.PnLogger;
 
 public class HelloWorld implements IUserExtension {
     private String description = "This is the description that is shown to administrators in the Planon web client.";
+    private PnLogger log = PnLogger.getLogger(HelloWorld.class);
 
     public HelloWorld() {}
 
     public void executeUX(IUXBusinessObject newBO,IUXBusinessObject oldBO, IUXContext context, String parameter) {
         // do stuff
+        log.info("executeUX - Hello from Dartmouth!");
     }
     
     public String getDescription() {
+        log.info("getDescription() - Hello from Dartmouth!");
         return description;
     }
 }
