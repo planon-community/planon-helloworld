@@ -88,7 +88,7 @@ If you see errors about the class file version, you may need to setup Gradle to 
 
 ```log
 2019-10-16 12:39:54,242 INFO  [pnlog.NONE.com.planonsoftware.platform.ux.v1.adapter.UXAdapter] (fileinstall-/var/lib/openshift/5da70c9fe3c9c37d6b000d59/planon/PlanonProCenter/wildfly-10.1.0.Final/standalone/bundles/planon) User Extension bundle Dartmouth-HelloWorld is installing...
-2019-10-16 12:39:54,244 INFO  [stdout] (fileinstall-/var/lib/openshift/5da70c9fe3c9c37d6b000d59/planon/PlanonProCenter/wildfly-10.1.0.Final/standalone/bundles/planon) WARNING: Invocation of 'start' failed. (java.lang.UnsupportedClassVersionError: edu/dartmouth/bt/planon/helloworld/sx/HelloWorld has been compiled by a more recent version of the Java Runtime (class file version 56.0), this version of the Java Runtime only recognizes class file versions up to 52.0)
+2019-10-16 12:39:54,244 INFO  [stdout] (fileinstall-/var/lib/openshift/5da70c9fe3c9c37d6b000d59/planon/PlanonProCenter/wildfly-10.1.0.Final/standalone/bundles/planon) WARNING: Invocation of 'start' failed. (java.lang.UnsupportedClassVersionError: edu/dartmouth/bt/planon/helloworld/HelloWorld has been compiled by a more recent version of the Java Runtime (class file version 56.0), this version of the Java Runtime only recognizes class file versions up to 52.0)
 2019-10-16 12:39:54,244 INFO  [pnlog.DEFAULT.nl.planon.hades.osgi.platform.OSGIContainer] (fileinstall-/var/lib/openshift/5da70c9fe3c9c37d6b000d59/planon/PlanonProCenter/wildfly-10.1.0.Final/standalone/bundles/planon) Bundle: Dartmouth-HelloWorld (0.0.0) is started.
 ```
 
@@ -99,3 +99,11 @@ Always use OpenJDK to compile your source files, using Oracle's JDK could subjec
     "java.home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
 }
 ```
+
+### SX Installation
+
+#### Manifest Issues
+
+If you aren't seeing any activity in the server.log log after placing your JAR in the tms/upload/jboss folder it could be an issue with the manifest.
+
+* Check the MANIFEST.MF file in the build/libs/*jar file, if there are issues with the key/values it could cause Planon to not even attempt to load the jar (*from the server.log perspective*)
